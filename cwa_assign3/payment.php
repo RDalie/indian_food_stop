@@ -177,7 +177,7 @@
                     </section>
 
                     <section class="row input">
-                        <input type="submit" value="Check-Out" id="check-out"/>
+                        <input name="check_out" type="submit" value="Check-Out" id="check-out"/>
                         <input type="button" value="Cancel" id="cancel"/>
                     </section>
                 </form>

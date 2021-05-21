@@ -10,6 +10,8 @@
         return $data;
     }
 
+    
+
 
     $errMsg = "";
 
@@ -30,7 +32,7 @@
     } else {
 
         // redirect if php is accessed directly
-        header("location: payment.php");
+        header("location:enquire.php");
         exit();
     };
 
@@ -375,6 +377,9 @@ if (isset($_POST['state']) and isset($_POST['postcode'])) {
     if ($errMsg != "") {
 
         $_SESSION["errMsg"] = $errMsg;
+
+        $_SESSION["fix_order"] = 'yes';
+
         header("location:fix_order.php");
         exit();
     }
@@ -387,6 +392,7 @@ if (isset($_POST['state']) and isset($_POST['postcode'])) {
     $conn = @mysqli_connect($host,$user,$pwd,$sql_db);    
 
     if ($conn) { // if connection successful
+
         $sql_table = 'orders';
         
         $create_table_query = "create table if not exists $sql_table (order_id int not null auto_increment primary key, order_cost int(11) not null, order_time datetime not null, order_status set('PENDING', 'FULFILLED', 'PAID', 'ARCHIVED') not null, first_name varchar(25) not null, last_name varchar(25) not null, delivery_street_add varchar(40) not null, delivery_suburb_town varchar(20) not null, delivery_state varchar(30) not null, delivery_postcode int(11) not null, email_id varchar(80) not null, phone_number int(10) not null, preferred_contact varchar(40) not null, price int(11) not null, number_of_meals int(11) not null, product varchar(40) not null, features varchar(20) not null, comments varchar(255) not null);";
@@ -414,4 +420,8 @@ if (isset($_POST['state']) and isset($_POST['postcode'])) {
     } else { // if connection not successful
         echo "<p>Unable to connect to the databse</p>";
     }
+
+    $_SESSION["receipt"] = 'yes';
+
+    header("location:receipt.php");
 ?>
