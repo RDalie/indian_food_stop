@@ -387,17 +387,28 @@ if (isset($_POST['state']) and isset($_POST['postcode'])) {
     $conn = @mysqli_connect($host,$user,$pwd,$sql_db);    
 
     if ($conn) { // if connection successful
-
         $sql_table = 'orders';
-        $query = "insert into $sql_table (order_id, order_cost,	order_time,	order_status, 	first_name,	last_name,	delivery_street_add, delivery_suburb_town,	delivery_state,	delivery_postcode, email_id, phone_number,	preferred_contact,	price ,number_of_meals,	product, features,comments) values (NULL, '$total_cost', NOW(), 'PENDING', '$first_name', '$last_name', '$street_address', '$suburb', '$state', '$postcode', '$email_id', '$phone_number', '$preferred_contact', '$price', '$number_of_meals', '$products', '$features', '$comments') ";
+        
+        $create_table_query = "create table if not exists $sql_table (order_id int not null auto_increment primary key, order_cost int(11) not null, order_time datetime not null, order_status set('PENDING', 'FULFILLED', 'PAID', 'ARCHIVED') not null, first_name varchar(25) not null, last_name varchar(25) not null, delivery_street_add varchar(40) not null, delivery_suburb_town varchar(20) not null, delivery_state varchar(30) not null, delivery_postcode int(11) not null, email_id varchar(80) not null, phone_number int(10) not null, preferred_contact varchar(40) not null, price int(11) not null, number_of_meals int(11) not null, product varchar(40) not null, features varchar(20) not null, comments varchar(255) not null);";
+
+        $query = "insert into $sql_table (order_id, order_cost,	order_time,	order_status, 	first_name,	last_name,	delivery_street_add, delivery_suburb_town,	delivery_state,	delivery_postcode, email_id, phone_number,	preferred_contact,	price ,number_of_meals,	product, features,comments) values (NULL, '$total_cost', NOW(), 'PENDING', '$first_name', '$last_name', '$street_address', '$suburb', '$state', '$postcode', '$email_id', '$phone_number', '$preferred_contact', '$price', '$number_of_meals', '$products', '$features', '$comments');";
+
 
         
+        $create_table_result = mysqli_query($conn, $create_table_query);
+
+        if ($create_table_result) {
+            echo "<p>Table created</p>";
+        } else {
+            echo "<p> Something is wrong with the query ", $create_table_query, "</p>";
+        }
+
         $result = mysqli_query($conn, $query);
 
         if ($result) {
             echo "<p>Record Inserted</p>";
         } else {
-            echo "<p> Something is wrong with the query ", $insertQuery, "</p>";
+            echo "<p> Something is wrong with the query ", $query, "</p>";
         }
 
     } else { // if connection not successful
