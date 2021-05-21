@@ -31,6 +31,7 @@
 
         // redirect if php is accessed directly
         header("location: payment.php");
+        exit();
     };
 
     if (isset($_POST['lastname'])) {
@@ -183,6 +184,7 @@
             $errMsg .= "<p>Please choose a price</p>";
         };
 
+        
     };
 
     if (isset($_POST['number-of-meals'])) {
@@ -197,6 +199,9 @@
 
 
     };
+
+    $total_cost = $number_of_meals * $price;
+
 
     // RESTAURANT-ENQUIRY-------------------------------------------------------------------
 
@@ -371,6 +376,31 @@ if (isset($_POST['state']) and isset($_POST['postcode'])) {
 
         $_SESSION["errMsg"] = $errMsg;
         header("location:fix_order.php");
+        exit();
     }
 
+?>
+
+<!-- STORING THE ORDER IN A MYSQL TABLE -->
+<?php
+    require_once "settings.php";
+    $conn = @mysqli_connect($host,$user,$pwd,$sql_db);    
+
+    if ($conn) { // if connection successful
+
+        $sql_table = 'orders';
+        $query = "insert into $sql_table (order_id, order_cost,	order_time,	order_status, 	first_name,	last_name,	delivery_street_add, delivery_suburb_town,	delivery_state,	delivery_postcode, email_id, phone_number,	preferred_contact,	price ,number_of_meals,	product, features,comments) values (NULL, '$total_cost', NOW(), 'PENDING', '$first_name', '$last_name', '$street_address', '$suburb', '$state', '$postcode', '$email_id', '$phone_number', '$preferred_contact', '$price', '$number_of_meals', '$products', '$features', '$comments') ";
+
+        
+        $result = mysqli_query($conn, $query);
+
+        if ($result) {
+            echo "<p>Record Inserted</p>";
+        } else {
+            echo "<p> Something is wrong with the query ", $insertQuery, "</p>";
+        }
+
+    } else { // if connection not successful
+        echo "<p>Unable to connect to the databse</p>";
+    }
 ?>
