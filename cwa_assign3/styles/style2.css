@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.visa {
+    color: rgb(20, 20, 114);
+}
+.mastercard {
+    color: rgb(126, 126, 41);
+}
+.paypal {
+    color: rgb(68, 139, 221);
+}
+
+#payment {
+    background: linear-gradient(#ffe8bd, #696765);
+
+}
+
+#form-section {
+    /* position: absolute; */
+    top: 10%;
+    left: 30%;
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgb(0, 0, 0);
+    max-width: 55%;
+    margin: 20px auto 20px auto;
+
+}
+
+#user-section {
+    padding: 20px;
+    background-color: #201e1d;
+    color: white ;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#payment-section {
+    padding: 20px;
+}
+
+
+/* #payment-section {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    max-width: 50%;
+} */
+
+.row {
+    display: block;
+    margin: 15px 0px;
+}
+
+.row label {
+    display: block;
+    margin: 10px 0px;
+
+}
+.row input{
+    display: block;
+    border-radius: 20px;
+    padding: 5px;
+    outline: none;
+   
+}
+
+.input input {
+    display: inline;
+    margin: 5px;
+}
+
+.row .label {
+    margin: 0px 10px 10px 10px;
+    width: 150px;
+    display: block;
+    float: left;
+
+}
+
+.input-ro {
+    display: inline-block;
+}
+
+#timer {
+    /* background-color: white; */
+    max-width: 20%;
+    text-align: center;
+    left: 45%;
+    top: 20px;
+    position: relative;
+    display: inline-flex;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+#card-type-select {
+    border-radius: 20px;
+    padding: 5px;
+}

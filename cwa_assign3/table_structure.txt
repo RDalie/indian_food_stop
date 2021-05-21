@@ -1,0 +1,39 @@
+order_id | INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+first_name : type text, alphabets only, maximum of 25 characters | VARCHAR(25) NOT NULL
+last_name : type text, alphabets only, maximum of 25 characters | VARCHAR(25) NOT NULL
+
+----Delivery----
+street_address : type text, maximum of 40 characters | VARCHAR(40) NOT NULL
+suburb_town : type text, maximum of 20 characters | VARCHAR(40) NOT NULL
+state : select list
+postcode : exactly 4 digits | INT NOT NULL
+
+---Billing----
+street_address : type text, maximum of 40 characters | VARCHAR(40) NOT NULL
+suburb_town : type text, maximum of 20 characters | VARCHAR(20) NOT NULL
+state : select list
+postcode : exactly 4 digits | INT NOT NULL
+
+
+email_id : type email | VARCHAR(80) NOT NULL
+phone_number : type text maximum of 10 digits | INT(10) NOT NULL
+preferred_contact : radio buttons | VARCHAR(40) NOT NULL
+
+price INT NOT NULL
+number_of_meals 
+product : select
+features : checkboxes
+comments : textarea, placeholder
+
+
+
+----------------PAYMENT PAGE-----------------
+card_type : Visa, Mastercard, or American Express(no vaild default)
+name_on_card : maximum of 40 characters, alphabetical and space only
+credit_card_number : exactly 15 or 16 digits
+expiry_date : dd-mm
+cvv : text
+
+
+total_cost //total cost of order
+order_time //time at which order was generated

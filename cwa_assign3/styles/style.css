@@ -1,0 +1,669 @@
+/* 
+Student Name: Rabya Tayal
+Id: 103144215
+CSS for assignment 1: Html and CSS (Restaurant Meal)
+*/
+
+/* ------------------------------------------ */
+/* GLOBAL PROPERTIES */
+/* ------------------------------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+Formatting for the body of all web pages
+Font style used is provided by google fonts
+*/
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 21px;
+    letter-spacing: 1px;
+}
+
+/* NAVIGATION STYLES */
+
+/* Aligns the navigation to the right-side of the page and sets a background color */
+nav.global {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: right;
+    background-color: #AC4400;
+}
+
+/* Menu items displayed in a single line with padding between them */
+nav.global ul li{
+    display: inline-block;   
+    padding: 10px;
+}
+
+/* removing the default link decoration */
+nav.global a{
+    text-decoration: none;
+    color: #fff;
+
+    /* Transparent border so that the size remains unchanged on hovering */
+    border-bottom: 1px solid transparent;
+    padding-bottom: 5px;
+}
+
+/* creating an active and hovering effect for menu items */
+nav.global a:hover,
+nav.global a:active {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    transition: border-bottom 0.2s linear;
+}
+
+
+/* ------------------------------------------ */
+/* INDEX */
+/* ------------------------------------------ */
+
+/* 
+Background graphic for css with a black gradient to make text more visible
+*/
+
+/* ATTENTION! REFERENCED FROM https://unsplash.com/photos/8T9AVksyt7s */
+#index header {
+  background-image:linear-gradient(rgba(20, 20, 20, 0.349), rgba(0, 0, 0, 0.733)) , url(images/samosa.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* 
+formatting for the main "The Indian Food Stop" Heading on index.html
+*/
+#index h1 {
+  margin: 0 auto;
+  max-width: 900px;
+  position: absolute;
+  top: 40%;   
+  left: 10%;
+  color: #fff;
+  font-size: 350%;
+  font-weight: 300;
+  margin-bottom: 10px;
+
+}
+
+/* 
+Formatting for the image of a cat
+*/
+#index  img {
+  height: 200px;
+  width: 200px;
+  border-radius: 800px; 
+  max-width: 60%;
+  margin-left: 40%;
+  margin-right: 40%;
+  padding: 10px;
+}
+
+/* 
+background color formatting for the reviews section at the bottom of the page
+*/
+#index  .reviews {
+  background: linear-gradient(#C04804,#6b2502) ;
+  color: white;
+  padding-bottom: 30px;
+}
+
+/* 
+positioning and formatting content in the reviews section
+*/
+#index  .reviews p {
+  line-height: 30px;
+  text-align: justify;
+  font-style: italic; 
+  margin: auto auto;
+  max-width: 50%;
+}
+
+/* 
+formatting the h2 heading in the reviews section ("What our customers are saying...")
+*/
+#index .reviews h2 {
+  max-width: 450px;
+  padding-right: 0;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  margin: 0 auto;
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 200%;
+}
+
+/* Formatting the footer on index.html */
+#index footer {
+  text-align: center;
+  font-size: small;
+  max-width: 50%;
+  margin-left: 30%;
+  margin-right: 30%;
+  border: 3px solid #000;
+}
+
+/* 
+positions (-Miss Pussy) on the page
+*/
+#index #miss-pussy {
+  display: block;
+  margin-top: 20px;
+  
+}
+
+#index #miss-pussy a {
+  color: #fff;
+}
+
+/* 
+formats the REVIEWS button on the page
+*/
+
+#index .btn-reviews {
+  top: 55%;   
+  left: 10%;
+  position: absolute;
+  margin: 0 auto;
+  color: white;
+  font-size: 130%;
+  background-color: #d35400ec;
+  padding: 15px;
+  border-radius: 300px;
+  border: 2px solid transparent;
+}
+
+#index .btn-reviews a {
+  text-decoration: none;
+  color: white;
+}
+
+#index .btn-reviews:hover {
+  border: 2px solid #fff;
+}
+
+
+
+/* ------------------------------------------ */
+/* ABOUT ME */
+/* ------------------------------------------ */
+
+/* defining the postion of the intro section on the page */
+#about-me .intro  {
+    margin: 5% 15% 10% 15%;
+}
+
+#about-me .time-table {
+    margin: 5% 15% 10% 15%;
+    text-align: center;
+}
+
+/* formatting h1 headings */
+#about-me .intro h1, #about-me .time-table h1 {
+   
+    width: 50%;
+    text-align: center;
+    padding-bottom: 5%;
+    margin: 1% 10% 5% 10%;
+    font-size: 300%;
+    font-weight: 300;
+    border-bottom: 1px solid rgb(27, 27, 27);
+    
+}
+
+/* giving figure a double border and some formatting, making it float right */
+#about-me .intro figure {  
+    
+    border: 3px double rgb(24, 23, 23);
+    padding: 20px;
+    float: right;
+}
+
+#about-me .intro img {
+  height: 200px;
+  width: auto;
+}
+
+/* Formatting the definition list */
+
+#about-me .intro dl {
+    padding-top: 40px;
+    color: rgb(48, 47, 47);
+    
+}
+
+#about-me .intro dt {
+    float: left;
+    width: 20%;
+}
+
+#about-me .intro dd {
+    margin: 0 10px 10px 10px;
+}
+
+
+/* Formatting for the time-table */
+
+#about-me table {
+    table-layout: fixed ;
+    width: 100%;
+    margin: 30px auto;
+    border: 1.5px solid rgb(107, 107, 107);
+    border-collapse: collapse;
+  }
+
+ #about-me th {
+    color: #fff;
+    background-color: #e05e07d2;
+    border: 1px solid #fff;
+    padding: 2%;
+    /* border: 1px solid #fff; */
+    text-align: left;
+    font-weight: 900;
+  }
+
+#about-me tr {
+    padding: 20px;
+  }
+  
+#about-me tr:nth-child(even) {
+    border-bottom: 1px solid #000;
+  }
+  
+#about-me td {
+    width: 25% ;
+    height: 10px;
+    border-right: 1px solid #000;
+    padding: 2%;
+    font-weight: 400;
+ }
+
+#about-me table .tne10005, .cos10003, .cos10009, .cos10011 {
+    border: 1px solid #000;
+    color: #fff;
+
+  }
+
+#about-me table .tne10005 {
+    background-color:#7f8c8d;
+  }
+
+#about-me table .cos10009 {
+    background-color: #c0392b;
+  }
+
+#about-me table .cos10011 {
+    background-color: #9b59b6;
+  }
+
+#about-me table .cos10003 {
+    background-color: #27ae60;
+  }
+
+#about-me table .time {
+    vertical-align: top;
+    border-bottom: 1px solid #000;
+  }
+
+#about-me-body footer {
+  color: #000;
+  clear: left;
+  text-align: center;
+  font-size: small;
+  width: 100%;
+  border-top: 1px solid #000;
+}
+
+
+
+/* ------------------------------------------ */
+/* PRODUCT */
+/* ------------------------------------------ */
+
+
+
+/* 
+Formats the ASIDE container on product.html
+floats right
+*/
+#product aside {
+  float: right;
+  max-width: 25%;
+  border: 3px solid #AC4400;
+  line-height: 200%;
+  font-size: 100%;
+  padding: 3% 4%;
+}
+
+
+/*
+MAIN CONTAINER ON product.html
+Line height increases the content accessibility for the user (it becomes easier to read)
+The container is poisitoned
+it's floating left
+*/
+#product main {
+  line-height: 30px;
+  margin-left: 5%;
+  max-width: 65%;
+  float: left;
+}
+
+/* 
+Formatting for the heading: Meals on product.html and Enhancements on enhancements.html
+*/
+#product h1, .enhancements h1 {
+  margin: 5% 30% 0%  30%;
+  /* font shorthand property */
+  font:  small-caps normal 40px/300% 'Lato', sans-serif;
+  text-align: center;
+  padding-bottom: 0.5%;
+  border-bottom: 1px solid rgb(59, 58, 58);
+}
+
+/* 
+Formats the two 2nd level headings on product.html
+*/
+#product h2 {
+  margin: 9% 60% 40px 6%;
+  font-weight: 400;
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding-bottom: 1%;
+}
+
+/* 
+Formats the two unordered lists on product.html
+*/
+#product section ul {
+  float: left;
+  margin-left: 9%;
+  margin-bottom: 3%;
+  list-style-type: square;
+}
+
+
+/* 
+Formats the description paragraphs on product.html
+*/
+#product section p  {
+  float: left;
+  margin-left: 5%;
+  margin-bottom: 6%;
+  text-align: justify;
+}
+
+/*
+ Formats the two images on product.html
+border-radius changes the curvature of the image (makes it more round)
+*/
+#product section img {
+  float: left;
+  height: 200px;
+  width: 200px;
+  border-radius: 50px;
+}
+
+/* 
+defines how much area the table covers
+border collapse removes the double borders wherever necessary in the table 
+*/
+#product table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+/* 
+Formats the header and data cells in the table
+*/
+#product th, td {
+  padding: 1%;
+  border-bottom: 1px solid #ddd ;
+  text-align: center;
+}
+
+/* 
+Formats the table headings
+*/
+#product th {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+/* 
+gives an alternate grey white formatting to the table rows
+*/
+#product tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#product footer {
+  color: #000;
+  clear: left;
+  text-align: center;
+  font-size: small;
+  width: 100%;
+  border-top: 1px solid #000;
+}
+
+/* ------------------------------------------ */
+/* ENQUIRE */
+/* ------------------------------------------ */
+
+
+/* Background with a linear gradient */
+#enquire {
+  background: linear-gradient(#ffe8bd, #973600);
+}
+
+/* Some specific formatting for the font page */
+#enquire main {
+  margin: 40px auto;
+  max-width: 55%;
+  color: rgb(51,51,51);
+
+}
+
+/* Formatting for the main 'Contact Us' heading */
+#enquire h1 {
+  text-align: center;
+  color: rgb(59, 59, 59);
+  font-size: 300%;
+  font-weight: 300;
+  margin-bottom: 5%;
+}
+
+/* Formatting for the form container */
+#enquire form {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 16px rgb(0, 0, 0);
+  font-weight: 400;
+}
+
+/* Formatting for the fieldets */
+#enquire fieldset {
+  border: 1px solid rgb(105, 105, 105);
+  border-radius: 20px;
+  margin: 20px;
+}
+
+
+/* Styling the input fields (text/email/select/textarea) */
+#enquire input[type=text],
+#enquire input[type=email],
+#enquire select,
+#enquire textarea {
+  width: 40%;
+  float: right;
+  box-sizing: border-box  ;
+  border: 1px solid rgb(105, 105, 105);
+  border-radius: 10px;
+  padding: 5px 5px;
+}
+
+
+/* Adjustments needed for checkboxes and radio buttons */
+#enquire .check {
+  margin-left: 33%;
+}
+
+
+
+
+/* Making the default outline on buttons when in focus 0 */
+#enquire input[type=text]:focus,
+#enquire input[type=email]:focus,
+#enquire select:focus,
+#enquire textarea:focus,
+#enquire input[type=submit]:focus,
+#enquire input[type=reset]:focus {
+  outline-width: 0;
+  border: 2px solid black;
+  
+}
+
+/* Individual fieldset sections contained in the p element: adding padding */
+#enquire fieldset p {
+  margin: 25px; /* hi */
+}
+
+
+/* formatting for the buttons */
+#enquire input[type=submit],
+#enquire input[type=reset] {
+  font-size: 15px;
+  border-radius: 30px;
+  background-color: #d35400ec;
+  padding: 10px 15px;
+  font-size: 120%;
+  color: white;
+  border: 2px solid transparent;
+}
+
+/* Hover effect for buttons */
+#enquire input[type=submit]:hover,
+#enquire input[type=reset]:hover {
+  background-color: #a54505ec;
+
+
+}
+
+
+/* floating the reset button */
+#enquire input[type=reset] {
+  float: left;
+}
+
+/* container containing the submit and reset buttons positioned on the page */
+#enquire .submit-reset {
+  margin: 0% 30%;
+  text-align: center;
+}
+
+
+/* resizing the text area */
+#enquire textarea {
+  width: 50%;
+  margin-bottom: 5%;
+}  
+
+/* Editing the note in price fieldset */
+#enquire #priceFooter {
+  font-size: 60%;
+  margin-top: 9% ;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#enquire footer {
+  color: #000;
+  clear: left;
+  text-align: center;
+  font-size: small;
+  width: 100%;
+  border-top: 1px solid #000;
+}
+/* ------------------------------------------ */
+/* ENHANCEMENTS */
+/* ------------------------------------------ */
+
+/* Separating the bootstrap styles from index.html */
+.enhancements footer {
+  background-color: #AC4400;
+  margin-top: 1%;
+}
+
+/* Formatting for the social media buttons */
+
+.enhancements #btn1 {
+  background-color: #3b5998;
+}
+
+.enhancements #btn2 {
+  background-color: #55acee;
+}
+
+.enhancements #btn3 {
+  background-color: #ac2bac
+}
+
+.enhancements #btn4 {
+  background-color: #0082ca
+}
+
+
+/* Formatting text content on enhancements.html */
+.enhancements main {
+  line-height: 2em;
+  letter-spacing: 1px;
+}
+
+/* Formatting the ordered lists on enhancements.html */
+.enhancements main ol {
+  list-style-type:decimal;
+  max-width: 60%;
+  margin-left: 20%;
+  margin: 5% 20% 5% 20%;
+}
+
+.enhancements main .ol-li {
+  margin-bottom: 5% ;
+}
+
+
+/* Formatting the unordered lists on enhancements.html */
+.enhancements main ul {
+  list-style-type: square;
+  margin-left: 9%;
+}
+
+
+
+/* NOTE: The nav bar on enhancements.html had to be specially formatted because the bootstrap style file was modifying its styles, below are the styles used to override those */
+.enhancements nav.global {
+  padding: 0px;
+  margin: 0px;
+}
+.enhancements nav.global a:hover {
+  color: white;
+}
+
+.enhancements nav.global a {
+  font-size: 15px;
+  font-family: 'Lato', sans-serif;
+  padding: 6% 0%;
+  margin-left: 0;
+  margin-right: 0;
+  letter-spacing: 1px;
+}
