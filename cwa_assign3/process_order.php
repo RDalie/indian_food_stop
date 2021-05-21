@@ -1,6 +1,7 @@
 
 <?php
 
+    session_start();
     // Sanitize data
     function sanitize_input($data) {
         $data = trim($data);
@@ -8,6 +9,7 @@
         $data = htmlspecialchars($data);
         return $data;
     }
+
 
     $errMsg = "";
 
@@ -228,20 +230,23 @@
         $comments = $_POST['comments'];
         $comments = sanitize_input($comments);
 
-    };
+    };  
+
+    echo "<p>Line 3 </p>";
 
     // Credit Card Details
 
     // card type
-    if (isset($_POST['card-type-select'])) {
+    if (isset($_POST['card-type'])) {
 
-        $card_type = $_POST['card-type-select'];
+        $card_type = $_POST['card-type'];
         $card_type = sanitize_input($card_type);
 
         if (!preg_match("/^.+$/", $card_type)) {
             $errMsg .= "<p>Please select a card type</p>";
             }
             
+        echo "<p> $card_type </p>";
     }
 
     // name on credit card
@@ -249,22 +254,29 @@
 
         $card_name = $_POST['name-on-card'];
         $card_name = sanitize_input($card_name);
+
+        if (!preg_match("/^.+$/",$card_name)) {
+            $errMsg .= "Please fill a card name";
+        }
     }
 
+
     // credit card number
-    if (isset($_POST['card-number'])) {
+    if (isset($_POST['credit-card-number'])) {
         
-        $card_number = $_POST['card-number'];
+        $card_number = $_POST['credit-card-number'];
         $card_number = sanitize_input($card_number);
 
         
         if (!preg_match("/^.+$/", $card_number)) {
             $errMsg .= "<p>Please fill a card number</p>";
         }
+        echo "<p>Line 2</p>";
         
         // VALIDATING CARD TYPE AGAINST CARD NUMBER
-        if ($card_type == 'Visa' and isset($_POST['card-type-select'])) {
+        if ($card_type == 'Visa' and isset($_POST['card-type'])) {
             // Visa cards should start with 4 and be 16 digits long
+            echo "<p>Line 1</p>";
             if (!preg_match("/^4[0-9]{15}$/",$card_number)) {
             $errMsg .= '<p>Visa card numbers must start with 4 and be 16 digits long.</p>';
             }
@@ -355,33 +367,10 @@ if (isset($_POST['state']) and isset($_POST['postcode'])) {
 
 }
 
+    if ($errMsg != "") {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-echo  $errMsg ;
+        $_SESSION["errMsg"] = $errMsg;
+        header("location:fix_order.php");
+    }
 
 ?>
