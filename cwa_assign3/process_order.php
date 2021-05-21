@@ -412,7 +412,12 @@ if (isset($_POST['state']) and isset($_POST['postcode'])) {
         $result = mysqli_query($conn, $query);
 
         if ($result) {
+
+            // records the id of the last inserted record
+            $latest_id = mysqli_insert_id($conn);
+            $_SESSION['latest_id'] = $latest_id;
             echo "<p>Record Inserted</p>";
+            
         } else {
             echo "<p> Something is wrong with the query ", $query, "</p>";
         }
