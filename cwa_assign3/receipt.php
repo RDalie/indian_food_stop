@@ -7,17 +7,17 @@
         exit();
     }
     unset($_SESSION["receipt"]);
-    $latest_id = $_SESSION["latest_id"];
-    echo "<p>", $latest_id, "</p>";
-
-
+    
+    
     require_once "settings.php";
     $conn = @mysqli_connect($host,$user,$pwd,$sql_db);
-
+    
     
     if ($conn) { // if connection successful
         $query = "select * FROM orders WHERE order_id = '$latest_id'";
-
+        $latest_id = $_SESSION["latest_id"];
+        echo "<p>", $latest_id, "</p>";
+        
         $result = mysqli_query($conn, $query);
     
         if ($result) { // if query successful
