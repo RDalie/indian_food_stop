@@ -14,9 +14,13 @@
     
     
     if ($conn) { // if connection successful
+        
+        if (isset($_SESSION['latest_id'])) {
+            $latest_id = $_SESSION["latest_id"];
+            echo "<p>", $latest_id, "</p>";
+            
+        }
         $query = "select * FROM orders WHERE order_id = '$latest_id'";
-        $latest_id = $_SESSION["latest_id"];
-        echo "<p>", $latest_id, "</p>";
         
         $result = mysqli_query($conn, $query);
     
