@@ -1,5 +1,6 @@
 <?php
     session_start();
+    
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +22,9 @@
 
 
     <body>
+
+
+
     <?php
 
         if (!isset($_SESSION['username'])) {
@@ -34,6 +38,7 @@
             $username = $_SESSION['username'];
             echo "<h1>Hello! You are logged in as $username</h1>";
         }
+        unset($_SESSION['username']);
     ?>
         <!-- Links for managing and checking orders -->   
 
@@ -79,6 +84,29 @@
             </form>
         </section>
 
+        <section>
+            
+            <form action="datetime.php" method ='post'>
+                
+            <h2>Fulfilled Orders between two dates</h2>
+            <p>
+
+                <label for="from">From</label>
+                <input type="date" name="from" id="from">
+
+                <label for="to">To</label>
+                <input type="date" name="to" id="to">
+
+            </p>
+
+            <p> 
+                <input type="submit" id="submit" value="submit" class="submit-reset">
+            </p>
+
+
+            </form>
+        </section>
+
         <section id="links">
 
             <h2>Look up the database</h2>
@@ -87,8 +115,15 @@
             <p><a href="manager_result.php?pending=yes">Orders that are pending</a></p>
     
             <p><a href="manager_result.php?totalCost=yes">Orders sorted by total cost</a></p>
-    
+
+            <p><a href="mostPopularProducts.php?mostPopularProducts=yes">Most Popular Product</a></p>
+
+            <p><a href="avgPerDay.php?avgPerDay=yes">Avg Number of Orders Per Day</a></p>
+
+            
             <p><a href="manager_logout.php">Logout</a></p>
+
+
         </section>
 
     </body>

@@ -7,6 +7,7 @@
         <li><a href="about.php" class="btn">About Me</a></li>
         <li><a href="enhancements.php" class="btn">Enhancements</a></li>
         <li><a href="enhancements2.php" class="btn">Enhancements2</a></li>
+        <li><a href="enhancements3.php" class="btn">Enhancements3</a></li>
         <li><a href="manager.php" class="btn">Manager</a></li>
     </ul>
 </nav>

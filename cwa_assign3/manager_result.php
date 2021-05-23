@@ -55,7 +55,6 @@
 
         }
 
-         
         if ($result) { // if query successful
     
             echo "<table border = '1'>";
@@ -70,18 +69,14 @@
                 echo " <td> {$row['last_name']} </td>";
                 echo "<td> <a href='manager_update.php?update=yes&update_id={$row['order_id']}'> Update </a> </td> ";
                 echo "<td> <a href='manager_update.php?delete=yes&update_id={$row['order_id']}'>Delete</a> </td> </tr> ";
-            }
-
-            
-
-        } else { // if query not successful
-            echo "<p> Something is wrong with the query ", $query, "</p>";
-        }
-        
-
-
+            } 
 
     } else {
-        echo "<p> result error </p>";
+        echo "<p>Something is wrong with the query", $query, "</p>";
     }
-?>
+
+} else {
+    echo "<p>Unable to connect to the database</p>";
+}
+
+    ?>
